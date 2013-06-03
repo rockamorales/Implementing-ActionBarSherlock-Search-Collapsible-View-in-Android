@@ -3,6 +3,7 @@ package com.androidbegin.abssearchview;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 public class SingleItemView extends Activity {
@@ -18,6 +19,9 @@ public class SingleItemView extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.singleitemview);
+		// Hide the keyboard
+		InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+	    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
 		// Retrieve data from MainActivity on item click event
 		Intent i = getIntent();
 		// Get the results of rank
